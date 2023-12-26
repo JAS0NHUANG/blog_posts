@@ -1,0 +1,65 @@
+---
+title: AWS Certified Cloud Practitioner - Identity and Access Management
+date: '2023-12-26'
+tags: ['AWS', 'Certification', 'CCP', 'CLF-C02']
+---
+
+# Identity and Access Management (IAM)
+It is a Global service.  
+- Root: default and shouldn't be used
+- Users: can be grouped
+
+Groupes only contain users not other groups.
+
+## Shared Responsibility Model for IAM(AWS)
+AWS: Infra, Config and vulnerability analysis, Compliance validation
+User:
+- User, Group, Role and Policy management
+- MFA
+- Rotate keys often
+- Use IAM tools to apply appropriate permissions
+- Analyze access patterns and review permissions
+
+
+## IAM Permissions
+User or Groups can be assigned JSON "policy" file(what's allowed for it)
+Apply the "least privilege principle"
+
+Normaly it's better to create an IAM user and use it over root account for most operations.
+
+## IAM Policies inheritance
+1. Users inherite Group policies
+2. Users can have their own "inline" plicies.
+3. A User can inherite different groups policies.
+
+### Policies contents
+- Version: usally a date string
+- ID: optional
+- Statements: Sid, Effect(Allow or deny), Principal(applied user/account...), Action, Resources(AWS services), Condition(optional)
+
+## IAM Multi-Factor Authentication(MFA)
+- Set password policy
+
+## AWS Access Keys for CLI, SDK
+
+## IAM Roles
+Roles are assigned to AWS services
+Ex: EC2 Instance Roles, Lambda Function Roles, Roles for CloudFormation...etc.
+
+## IAM Security Tools
+- IAM Credentials Report
+- IAM Access Advisor
+
+## Conclusion
+- Don't use the root account except for AWS account setup
+- One Physical user = One AWS user
+- Assign users to groups and assign permissions to groups(avoid inline policies)
+- Strong password policy
+- MFA
+- Roles to give permissions to AWS services
+- Use Access Keys for CLI/SDK...
+- Audit permissions using IAM Credentials Report & IAM Access Advisorj
+
+
+
+
