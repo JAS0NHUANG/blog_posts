@@ -1,0 +1,63 @@
+---
+title: AWS Certified Cloud Practitioner - Elastic Compute Cloud(EC2)
+date: '2023-12-26'
+tags: ['AWS', 'Certification', 'CCP', 'CLF-C02']
+---
+# Elastic Compute Cloud(EC2)
+- IaaS
+- Rent VMs (EC2)
+- Store data (EBS)
+- Loadbalancing (ELB)
+- Auto-scaling group (ASG)
+
+## EC2 Options
+- OS
+- CPU
+- RAM
+- Storage(EBS & EFS, EC2 Instance Store...etc)
+- Network card, IP
+- Firewall (security group)
+- Bootstrap script (EC2 User Data)
+
+## EC2 Instance Type
+### Instance naming
+m5.2xlarge
+- m: type
+- 5: generation
+- 2xlarge: size
+
+1. General Purpose
+2. Compute Optimized(Batch Processing, Media transcode, HPC, Sientific, ML...)
+3. Memory Optimized(Hight performence DB, In-memory DB for BI, big unstructured data...)
+4. Storage Optimized(OLTP systems, DBs, Cache, Data warehouse, Distributed file system...)
+
+Nice website for AWS services info:
+[Vantage](https://instances.vantage.sh/)
+
+## Security Groups
+- Act as a "firewall" on EC2 instances
+- Access to Ports, IP ranges, control of Inbound/Outbound network
+- It can be attached to multiple instances
+- By default all inbound traffic is blocked, all outbound traffic is authorazed
+- We can reference other security groups(usually for other instances' connection)
+- Normaly a "Time Out" connection error is caused by Security Group blockage
+- Don't enter IAM info in a EC2 Instance(set up IAM Role instead)
+
+### Classic Ports to know
+22(SSH), 21(FTP), 22(SFTP), 80(HTTP), 443(HTTPS), 3389(RDP)
+
+## Purchasing Options
+1. On-Demand Instances - short workload, predictable pricing, pay by second
+2. Reserved Instances - long workloads, pay by Terms
+3. Savings Plans - commitment to an amount of usage, long workload
+4. Spot Instances - short workloads, cheap, can lose instances(less reliable)
+5. Dedicated Hosts - physical server, control instance placement
+6. Dedicated Instances - no hardware sharing with other customers
+7. Capacity Reservations - reserve capacity in a specific AZ
+
+
+
+
+
+ 
+
